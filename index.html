@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+
+    <title>DFB Digital</title>
+
+    <meta property="og:title" content="DFB Digital" />
+    <meta property="og:image" content="https://i.ibb.co/b7zbdNg/linkpreview.png" />
+    <meta property="og:description" content="DFB Digital Launching Soon" />
+    <meta property="og:url" content="https://dfbdigital.com" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta property="og:type" content="website" />
+
+
+    <link rel="stylesheet" href="css/maintenance.css" />
+    <link rel="icon" href="img/favicon.jpg" type="image/jpeg">
+
+
+</head>
+
+<body>
+    <div class="home">
+        <div class="launching-soon">
+            <span id="line1" class="typing"></span><br>
+            <span id="line2" class="typing" style="visibility: hidden;"></span>
+        </div>
+    </div>
+</body>
+<script>
+    const line1Text = "LAUNCHING";
+    const line2Text = "SOON!";
+    const speed = 150;
+    const loopInterval = 3000;
+
+    const line1Element = document.getElementById("line1");
+    const line2Element = document.getElementById("line2");
+
+    let typingTimeout;
+    let typingInterval;
+
+    function startTyping() {
+        clearTimeout(typingTimeout);
+        line1Element.innerHTML = '';
+        line2Element.innerHTML = '';
+        line1Element.classList.add("typing");
+        line2Element.classList.remove("typing");
+        line2Element.style.visibility = 'hidden';
+
+
+        typeWriter(line1Element, line1Text, () => {
+            line1Element.classList.remove("typing");
+            line2Element.style.visibility = 'visible';
+            line2Element.classList.add("typing");
+            typeWriter(line2Element, line2Text, () => {
+                line2Element.classList.remove("typing");
+            });
+        });
+    }
+
+    function typeWriter(element, text, callback) {
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                typingTimeout = setTimeout(type, speed);
+            } else if (callback) {
+                callback();
+            }
+        }
+        type();
+    }
+
+    function handleVisibilityChange() {
+        if (document.hidden) {
+            clearInterval(typingInterval);
+            clearTimeout(typingTimeout);
+        } else {
+            setTimeout(() => {
+                startTyping();
+                typingInterval = setInterval(startTyping, loopInterval);
+            }, 300);
+        }
+    }
+
+    startTyping();
+    typingInterval = setInterval(startTyping, loopInterval);
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+</script>
+
+</html>
