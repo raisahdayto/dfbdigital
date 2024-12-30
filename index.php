@@ -1,92 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DFB Digital</title>
-
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="icon" href="img/favicon.jpg" type="image/jpeg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+<?php
+include("connect/config.php");
+include("header.php");
+include("navbar.php");
+include("successmodal.php")
+?>
 
 <body>
     <div class="main-content">
-        <!-- Nav Bar -->
-        <nav id="navbar" class="logo-parent transparent">
-            <a href="#home">
-                <img src="img/logo.png" alt="DFB Logo" class="logo-icon">
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link active">HOME</a></li>
-                <li><a href="#aboutus" class="nav-link">ABOUT</a></li>
-                <li><a href="#services" class="nav-link">SERVICES</a></li>
-            </ul>
-            <div class="social-media">
-                <a href="https://twitter.com" target="_blank" class="social-link">
-                    <svg class="social-icon" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-143 145 512 512" xml:space="preserve">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path
-                                d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M215.2,361.2 c0.1,2.2,0.1,4.5,0.1,6.8c0,69.5-52.9,149.7-149.7,149.7c-29.7,0-57.4-8.7-80.6-23.6c4.1,0.5,8.3,0.7,12.6,0.7 c24.6,0,47.3-8.4,65.3-22.5c-23-0.4-42.5-15.6-49.1-36.5c3.2,0.6,6.5,0.9,9.9,0.9c4.8,0,9.5-0.6,13.9-1.9 C13.5,430-4.6,408.7-4.6,383.2v-0.6c7.1,3.9,15.2,6.3,23.8,6.6c-14.1-9.4-23.4-25.6-23.4-43.8c0-9.6,2.6-18.7,7.1-26.5 c26,31.9,64.7,52.8,108.4,55c-0.9-3.8-1.4-7.8-1.4-12c0-29,23.6-52.6,52.6-52.6c15.1,0,28.8,6.4,38.4,16.6 c12-2.4,23.2-6.7,33.4-12.8c-3.9,12.3-12.3,22.6-23.1,29.1c10.6-1.3,20.8-4.1,30.2-8.3C234.4,344.5,225.5,353.7,215.2,361.2z">
-                            </path>
-                        </g>
-                    </svg>
-                </a>
-                <a href="https://facebook.com" target="_blank" class="social-link">
-                    <svg class="social-icon" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-143 145 512 512" xml:space="preserve">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path
-                                d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M169.5,357.6l-2.9,38.3h-39.3 v133H77.7v-133H51.2v-38.3h26.5v-25.7c0-11.3,0.3-28.8,8.5-39.7c8.7-11.5,20.6-19.3,41.1-19.3c33.4,0,47.4,4.8,47.4,4.8l-6.6,39.2 c0,0-11-3.2-21.3-3.2c-10.3,0-19.5,3.7-19.5,14v29.9H169.5z">
-                            </path>
-                        </g>
-                    </svg>
-                </a>
-                <a href="https://instagram.com" target="_blank" class="social-link">
-                    <svg class="social-icon" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-143 145 512 512" xml:space="preserve">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <g>
-                                <path
-                                    d="M113,446c24.8,0,45.1-20.2,45.1-45.1c0-9.8-3.2-18.9-8.5-26.3c-8.2-11.3-21.5-18.8-36.5-18.8s-28.3,7.4-36.5,18.8 c-5.3,7.4-8.5,16.5-8.5,26.3C68,425.8,88.2,446,113,446z">
-                                </path>
-                                <polygon points="211.4,345.9 211.4,308.1 211.4,302.5 205.8,302.5 168,302.6 168.2,346 ">
-                                </polygon>
-                                <path
-                                    d="M183,401c0,38.6-31.4,70-70,70c-38.6,0-70-31.4-70-70c0-9.3,1.9-18.2,5.2-26.3H10v104.8C10,493,21,504,34.5,504h157 c13.5,0,24.5-11,24.5-24.5V374.7h-38.2C181.2,382.8,183,391.7,183,401z">
-                                </path>
-                                <path
-                                    d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M241,374.7v104.8 c0,27.3-22.2,49.5-49.5,49.5h-157C7.2,529-15,506.8-15,479.5V374.7v-52.3c0-27.3,22.2-49.5,49.5-49.5h157 c27.3,0,49.5,22.2,49.5,49.5V374.7z">
-                                </path>
-                            </g>
-                        </g>
-                    </svg>
-                </a>
-                <a href="https://linkedin.com" target="_blank" class="social-link">
-                    <svg class="social-icon" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-143 145 512 512" xml:space="preserve">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path
-                                d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M41.4,508.1H-8.5V348.4h49.9 V508.1z M15.1,328.4h-0.4c-18.1,0-29.8-12.2-29.8-27.7c0-15.8,12.1-27.7,30.5-27.7c18.4,0,29.7,11.9,30.1,27.7 C45.6,316.1,33.9,328.4,15.1,328.4z M241,508.1h-56.6v-82.6c0-21.6-8.8-36.4-28.3-36.4c-14.9,0-23.2,10-27,19.6 c-1.4,3.4-1.2,8.2-1.2,13.1v86.3H71.8c0,0,0.7-146.4,0-159.7h56.1v25.1c3.3-11,21.2-26.6,49.8-26.6c35.5,0,63.3,23,63.3,72.4V508.1z ">
-                            </path>
-                        </g>
-                    </svg>
-                </a>
-                <a class="button">CONTACT US</a>
-            </div>
-        </nav>
-
         <!-- Home -->
         <section id="home" class="home-section">
             <div class="hero-section">
@@ -114,7 +34,8 @@
                                         business GROW... just click below:
                                     </span>
                                 </p>
-                                <a type="button" class="hero-button" data-bs-toggle="modal" data-bs-target="#myModal">
+                                <a type="button" class="hero-button" data-bs-toggle="modal"
+                                    data-bs-target="#auditModal">
                                     FREE DIGITAL AUDIT
                                 </a>
                             </div>
@@ -124,8 +45,8 @@
             </div>
         </section>
 
-        <!-- Modal -->
-        <div class="modal fade" id="myModal">
+        <!-- Audit Modal -->
+        <div class="modal fade" id="auditModal">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -134,39 +55,70 @@
                     </div>
                     <div class="modal-body">
                         <form id="detailsForm">
+                            <input type="hidden" name="formType" value="audit">
+
                             <div class="mb-3">
-                                <label for="firstName" id="fname" class="form-text">First Name <span
-                                        class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="firstName" name="firstName"
-                                    placeholder="Ex. Juan" required>
+                                <label for="firstName" class="form-text">First Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Ex. Juan" required>
                             </div>
                             <div class="mb-3">
-                                <label for="lastName" id="lname" class="form-text">Last Name <span
-                                        class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="lastName" name="lastName"
-                                    placeholder="Ex. Dela Cruz" required>
+                                <label for="lastName" class="form-text">Last Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Ex. Dela Cruz" required>
                             </div>
                             <div class="mb-3">
-                                <label for="companyName" id="cname" class="form-text">Company Name <span
-                                        class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="companyName" name="companyName"
-                                    placeholder="Ex. ABC Company" required>
+                                <label for="companyName" class="form-text">Company Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Ex. ABC Company" required>
                             </div>
                             <div class="mb-3">
-                                <label for="emailAddress" id="email" class="form-text">Email Address <span
-                                        class="text-danger">*</span></label>
-                                <input type="email" class="form-control" id="emailAddress" name="emailAddress"
-                                    placeholder="Ex. juandelacruz@gmail.com" required>
+                                <label for="emailAddress" class="form-text">Email Address <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="emailAddress" name="emailAddress" placeholder="Ex. juandelacruz@gmail.com" required>
+                                <small id="emailError" class="text-danger" style="display: none;">Invalid email address.</small>
                             </div>
                             <div class="mb-3">
-                                <label for="mobileNumber" id="number" class="form-text">Mobile Number (optional)</label>
-                                <input type="tel" class="form-control" id="mobileNumber" placeholder="Ex. +639258559265"
-                                    name="mobileNumber">
+                                <label for="mobileNumber" class="form-text">Mobile Number (optional)</label>
+                                <input type="tel" class="form-control" id="mobileNumber" name="mobileNumber" placeholder="Ex. +639258559265">
+                                <small id="mobileError" class="text-danger" style="display: none;">Invalid mobile number. Must start with +63.</small>
                             </div>
+                            <div id="formError" class="text-danger mt-3" style="display: none;">Fill out all required fields.</div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="submit-button" id="submitFormButton">Submit</button>
+                        <button type="button" class="submit-button" id="submitAudit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Modal -->
+        <div class="modal fade" id="contactModal">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-primary">Get in Touch with DFB Digital</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="contactForm">
+                            <input type="hidden" name="formType" value="contact">
+
+                            <div class="mb-3">
+                                <label for="fullName" class="form-text">Full Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Ex. Juan Dela Cruz" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="c-emailAddress" class="form-text">Email Address <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="c-emailAddress" name="c-emailAddress" placeholder="Ex. juandelacruz@gmail.com" required>
+                                <small id="contactEmailError" class="text-danger" style="display: none;">Invalid email address.</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-text">Message <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Type your message here." required></textarea>
+                            </div>
+                            <div id="contactFormError" class="text-danger mt-3" style="display: none;">Fill out all required fields.</div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="submit-button" id="submitContact">Submit</button>
                     </div>
                 </div>
             </div>
@@ -369,81 +321,10 @@
             </div>
 
         </section>
-
-        <!-- Footer Section -->
-        <!-- <footer id="footer" class="container-fluid bg-dark text-white py-4">
-            <div class="row text-center">
-                <div class="col-md-4 mb-3">
-                    <img src="path_to_image.jpg" alt="DFB Logo" class="img-fluid mb-2" style="max-width: 100px;">
-                    <p>Your Company Name</p>
-                </div>
-
-                <div class="col-md-4 mb-3">
-                    <p>Follow Us:</p>
-                    <a href="https://facebook.com" class="text-white me-2">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://twitter.com" class="text-white me-2">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://instagram.com" class="text-white">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-
-                <div class="col-md-4 mb-3">
-                    <p>CEO: John Doe</p>
-                    <p><i class="fas fa-envelope"></i> email@example.com</p>
-                    <p><i class="fas fa-phone"></i> +123 456 7890</p>
-                </div>
-            </div>
-        </footer> -->
+        <?php include("footer.php"); ?>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const navbar = document.getElementById('navbar');
-            const offset = 80;
-
-            function changeLinkState() {
-                let index = sections.length;
-
-                while (--index && window.scrollY < sections[index].offsetTop - offset) { }
-
-                navLinks.forEach((link) => link.classList.remove('active'));
-                if (index >= 0) navLinks[index].classList.add('active');
-            }
-
-            window.addEventListener('scroll', function () {
-                if (window.scrollY > offset) {
-                    navbar.classList.remove('transparent');
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                    navbar.classList.add('transparent');
-                }
-
-                changeLinkState();
-            });
-
-            navLinks.forEach((link) => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    link.classList.add('active');
-
-                    window.scrollTo({
-                        top: targetSection.offsetTop - offset,
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
-    </script>
+    <script src="js/navigation.js"></script>
+    <script src="js/submit.js"></script>
 </body>
 
 </html>

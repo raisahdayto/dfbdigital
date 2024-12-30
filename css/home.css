@@ -55,6 +55,14 @@ body {
     padding-bottom: 30px;
 }
 
+.footer-title {
+    font-size: 25px;
+    font-family: 'FORCED SQUARE', sans-serif;
+    text-align: center;
+    line-height: 0;
+    color: #ffffff;
+}
+
 .modal-header,
 .modal-body,
 .modal-footer {
@@ -87,6 +95,12 @@ body {
 }
 
 input::placeholder {
+    color: #99999993 !important;
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif;
+}
+
+textarea::placeholder {
     color: #99999993 !important;
     font-size: 14px !important;
     font-family: 'Open Sans', sans-serif;
@@ -229,8 +243,8 @@ input::placeholder {
 }
 
 .social-icon {
-    width: 32px;
-    height: 32px;
+    width: 32px !important;
+    height: 32px !important;
     fill: #F6F6FF !important;
     transition: transform 0.3s ease;
 }
@@ -408,26 +422,84 @@ input::placeholder {
 }
 
 .footer-section {
-    background-color: #001DFF;
+    width: 100%;
+    background-color: #0014a8;
     color: #F6F6FF;
-    padding: 20px 30px;
-    text-align: center;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.footer-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.footer-column {
+    padding: 10px;
+    vertical-align: top;
+    text-align: left;
+    line-height: 2;
+}
+
+.footer-logo {
+    margin: 0 auto 10px auto;
+    display: block;
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.footer-text {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    color: #F6F6FF;
+    line-height: 2;
+}
+
+.footer-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 2;
+}
+
+.footer-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 2;
+}
+
+.footer-icon {
+    width: 24px;
+    height: 24px;
+    color: #F6F6FF;
+}
+
+.footer-icon:hover {
+    color: #ffcc00;
 }
 
 .footer-links {
     list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
+    padding: 0;
 }
 
-.footer-link {
+.footer-links li {
+    margin-bottom: 5px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footer-links a {
     color: #F6F6FF;
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.footer-link:hover {
-    color: #f8b18a;
+.footer-links a:hover {
+    text-decoration: underline;
 }
